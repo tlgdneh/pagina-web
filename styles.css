@@ -1,0 +1,897 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   🌸 FELIPE & JULIA - 3 ANOS DE AMOR - STYLESHEET
+   Romântico | Elegante | Moderno
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   📋 SEÇÃO 1: RESET GLOBAL E VARIÁVEIS CSS
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+:root {
+    /* 🎨 Paleta de cores - Nude Elegante & Sofisticada */
+    --color-bg-primary: #f5f1ee;
+    --color-bg-secondary: #faf7f3;
+    --color-primary: #e8dcd8;
+    --color-secondary: #c9a77d;
+    --color-accent: #d4c5bc;
+    --color-accent-light: #e8dcd8;
+    --color-text: #3a3a3a;
+    --color-text-light: #6b6b6b;
+    --color-white: #ffffff;
+    --color-gray-light: #f5f1ee;
+
+    /* 🖋️ Tipografia */
+    --font-title: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+    --font-script: 'Dancing Script', cursive;
+
+    /* 📐 Layout */
+    --max-width: 1200px;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+
+    /* ⏱️ Transições suaves */
+    --transition-fast: all 0.3s ease;
+    --transition-smooth: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-slow: all 1s ease-in-out;
+
+    /* 🎭 Sombras elegantes */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔄 Reset universal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-white);
+    overflow-x: hidden;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   ✨ SEÇÃO 2: ANIMAÇÕES NOMEADAS E TEMÁTICAS
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* 💖 Entrada suave e romântica */
+@keyframes loveFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🌹 Subida elegante (para textos e seções) */
+@keyframes roseSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ✨ Zoom delicado (para fotos e botões) */
+@keyframes goldenZoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 💫 Brilho suave em destaque (para títulos) */
+@keyframes softGlow {
+    0% {
+        text-shadow: 0 0 0px rgba(201, 167, 125, 0);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(201, 167, 125, 0.3);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(201, 167, 125, 0.4);
+    }
+}
+
+/* 💕 Flutuação romântica (ícones e corações) */
+@keyframes floatingHearts {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-8px);
+        opacity: 0.9;
+    }
+}
+
+/* 🕊️ Aparecer com delicadeza (para seções inteiras) */
+@keyframes softReveal {
+    from {
+        opacity: 0;
+        filter: blur(8px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* 🔆 Pulse delicado (para elementos destacados) */
+@keyframes delicatePulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(201, 167, 125, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(201, 167, 125, 0.5);
+        transform: scale(1.05);
+    }
+}
+
+/* 🎯 Descer suavemente */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 📍 Bounce elegante */
+@keyframes elegantBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 🌊 Flutuação suave (parallax) */
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* 🪨 Aparecer letra por letra */
+@keyframes typewriterAppear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   🏷️ SEÇÃO 3: CLASSES DE ANIMAÇÃO REUTILIZÁVEIS
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.animate-loveFadeIn {
+    animation: loveFadeIn 1.2s ease forwards;
+}
+
+.animate-roseSlideUp {
+    animation: roseSlideUp 1s ease forwards;
+}
+
+.animate-goldenZoomIn {
+    animation: goldenZoomIn 0.8s ease forwards;
+}
+
+.animate-softGlow {
+    animation: softGlow 1.5s ease-in-out forwards;
+}
+
+.animate-floatingHearts {
+    animation: floatingHearts 3s ease-in-out infinite;
+}
+
+.animate-softReveal {
+    animation: softReveal 1.3s ease forwards;
+}
+
+.animate-delicatePulse {
+    animation: delicatePulse 2s ease-in-out infinite;
+}
+
+.animate-slideDown {
+    animation: slideDown 0.6s ease-out forwards;
+}
+
+.animate-elegantBounce {
+    animation: elegantBounce 2s ease-in-out infinite;
+}
+
+.animate-gentleFloat {
+    animation: gentleFloat 6s ease-in-out infinite;
+}
+
+.animate-typewriter {
+    animation: typewriterAppear 0.05s ease-out forwards;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   🧭 SEÇÃO 4: NAVEGAÇÃO
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+    animation: slideDown 0.6s ease-out;
+}
+
+.nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.nav-logo:hover {
+    color: var(--color-secondary);
+    transform: scale(1.05);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    text-decoration: none;
+    position: relative;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-secondary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-secondary);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   🌟 SEÇÃO 5: SEÇÃO HERÓI
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 60px;
+}
+
+.hero-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--color-bg-secondary) 0%, #faf7f3 50%, var(--color-primary) 100%);
+    z-index: -2;
+}
+
+.particle-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    pointer-events: none;
+}
+
+.particle-dot {
+    width: 4px;
+    height: 4px;
+    background: rgba(218, 165, 32, 0.5);
+    border-radius: 50%;
+    filter: blur(1px);
+}
+
+.particle-light {
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(218, 165, 32, 0.3), transparent);
+    border-radius: 50%;
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 10;
+    animation: loveFadeIn 1.2s ease-out;
+}
+
+.hero-title {
+    font-family: var(--font-title);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: #8b7355;
+    font-weight: 800;
+    margin-bottom: var(--spacing-sm);
+    animation: loveFadeIn 1.2s ease-out 0.2s both;
+}
+
+.hero-subtitle {
+    font-family: var(--font-script);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: #9d8b7f;
+    font-weight: 400;
+    letter-spacing: 1px;
+    animation: roseSlideUp 1s ease-out 0.4s both;
+}
+
+.hero-glow {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(201, 167, 125, 0.1), transparent);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: gentleFloat 6s ease-in-out infinite;
+    z-index: -1;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    animation: elegantBounce 2s infinite;
+    z-index: 10;
+}
+
+.scroll-text {
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+.scroll-arrow {
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   📖 SEÇÃO 6: TIMELINE (NOSSA HISTÓRIA)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.timeline-section {
+    padding: var(--spacing-xl) var(--spacing-lg);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-white) 100%);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    animation: loveFadeIn 1s ease-out;
+}
+
+.section-title h2 {
+    font-family: var(--font-title);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: #5a4a42;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--color-secondary);
+    border-radius: 2px;
+    animation: goldenZoomIn 0.8s ease-out 0.3s both;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.timeline-item {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: var(--transition-smooth);
+}
+
+.timeline-dot {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background: var(--color-secondary);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: var(--spacing-sm);
+    box-shadow: 0 0 20px rgba(201, 167, 125, 0.3);
+    animation: delicatePulse 2s infinite;
+}
+
+.timeline-dot::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 100px;
+    background: linear-gradient(180deg, var(--color-secondary), transparent);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+}
+
+.timeline-item:last-child .timeline-dot::before {
+    display: none;
+}
+
+.timeline-content {
+    flex: 1;
+    padding: var(--spacing-md);
+    background: var(--color-white);
+    border-left: 3px solid var(--color-secondary);
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+}
+
+.timeline-content h3 {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    color: #5a4a42;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.7;
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: var(--color-secondary);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   🖼️ SEÇÃO 7: GALERIA DE MOMENTOS
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.gallery-section {
+    padding: var(--spacing-xl) var(--spacing-lg);
+    background: var(--color-gray-light);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #999;
+    margin-top: 0.5rem;
+    font-weight: 300;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 4rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.gallery-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition-smooth);
+}
+
+.gallery-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    aspect-ratio: 4 / 5;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid rgba(201, 167, 125, 0.25);
+    transition: var(--transition-fast);
+}
+
+.gallery-image-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(201, 167, 125, 0), rgba(201, 167, 125, 0.12));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.gallery-image-wrapper:hover .gallery-image {
+    transform: scale(1.08);
+}
+
+.gallery-image-wrapper:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   💌 SEÇÃO 8: MENSAGEM ESPECIAL
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.message-section {
+    padding: var(--spacing-xl) var(--spacing-lg);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-white) 100%);
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-container {
+    max-width: 800px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.message-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: var(--transition-smooth);
+}
+
+.message-text {
+    font-family: var(--font-script);
+    font-size: clamp(1.3rem, 4vw, 2.2rem);
+    color: #5a4a42;
+    line-height: 1.9;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.message-signature {
+    display: block;
+    margin-top: var(--spacing-lg);
+    font-size: 1.4rem;
+    color: var(--color-secondary);
+}
+
+.typewriter-char {
+    display: inline;
+    animation: typewriterAppear 0.05s ease-out forwards;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   🦶 SEÇÃO 9: RODAPÉ
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.footer {
+    position: relative;
+    padding: 4rem var(--spacing-lg);
+    background: var(--color-white);
+    border-top: 1px solid rgba(201, 167, 125, 0.15);
+    overflow: hidden;
+}
+
+.floating-hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0.5;
+    animation: floatingHearts 8s ease-in infinite;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.footer-text {
+    font-family: var(--font-script);
+    font-size: 1.3rem;
+    color: #5a4a42;
+}
+
+.back-to-top {
+    padding: 0.8rem var(--spacing-lg);
+    background: var(--color-secondary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    align-self: center;
+    max-width: fit-content;
+    box-shadow: 0 4px 15px rgba(201, 167, 125, 0.25);
+}
+
+.back-to-top:hover {
+    background: var(--color-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(232, 197, 206, 0.3);
+}
+
+.back-to-top:active {
+    transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   🎬 SEÇÃO 10: ANIMAÇÕES GERAIS E SCROLL
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition-smooth);
+}
+
+.fade-in-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   📱 SEÇÃO 11: RESPONSIVIDADE (MOBILE-FIRST)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    :root {
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 3rem;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .nav-menu {
+        gap: var(--spacing-sm);
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        margin-top: 80px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .timeline-dot {
+        margin-left: 0;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .message-text {
+        font-size: 1.3rem;
+    }
+
+    .message-signature {
+        font-size: 1.1rem;
+    }
+
+    .timeline-section,
+    .gallery-section,
+    .message-section {
+        padding: var(--spacing-xl) var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --spacing-lg: 1rem;
+        --spacing-xl: 2rem;
+    }
+
+    .nav-bar {
+        padding: 0.5rem 0;
+    }
+
+    .nav-container {
+        padding: 0.5rem var(--spacing-sm);
+    }
+
+    .nav-logo {
+        font-size: 1.1rem;
+    }
+
+    .nav-menu {
+        gap: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        height: 80vh;
+        margin-top: 60px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .scroll-indicator {
+        font-size: 0.75rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.5rem;
+    }
+
+    .timeline-content {
+        padding: var(--spacing-sm);
+    }
+
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .message-text {
+        font-size: 1.1rem;
+    }
+
+    .footer-text {
+        font-size: 1rem;
+    }
+
+    .back-to-top {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .timeline-section,
+    .gallery-section,
+    .message-section {
+        padding: var(--spacing-xl) var(--spacing-xs);
+    }
+
+    .gallery-grid {
+        gap: 1.5rem;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   ✅ FIM DO STYLESHEET - DESIGN LIMPO, MODERNO E ROMÂNTICO
+   ═══════════════════════════════════════════════════════════════════════════════ */
